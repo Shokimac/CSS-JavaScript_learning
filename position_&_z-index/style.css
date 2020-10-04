@@ -1,6 +1,7 @@
 #container {
   padding: 1rem;
   background-color: gray;
+  position: relative;
 }
 
 div {
@@ -15,19 +16,33 @@ div {
 
 .div-1 {
   background: orange;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .div-2 {
   background: tomato;
+  position: relative;
+  top: 10px;
+  left: 10px;
 }
 
 .div-3 {
   background: teal;
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  height: 800px;
 }
 
 .div-4 {
   width: 80px;
   height: 80px;
   background-color: violet;
+  z-index: 100;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 30px;
 }
 /*# sourceMappingURL=style.css.map */
