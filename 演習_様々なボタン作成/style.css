@@ -1,0 +1,10 @@
+.btn.float {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn.float:hover {
+  background-color: black;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */
