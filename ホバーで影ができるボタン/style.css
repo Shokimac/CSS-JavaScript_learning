@@ -13,4 +13,9 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
+.btn.float:hover {
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+}
 /*# sourceMappingURL=style.css.map */
