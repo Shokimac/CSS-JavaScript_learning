@@ -30,7 +30,8 @@ $cBlack: black;
       top: 0;
       left: 0;
       transform: translateX(-100%);
-      transition: transform 0.3s;
+      transition: transform 0.3s, -webkit-transform 0.3s cubic-bezier(0.8, -1, 0, 1.73);
+      // デベロッパーツールのGUI上にてアニメーションの緩急を調整可能。
       z-index: -1;
     }
 
