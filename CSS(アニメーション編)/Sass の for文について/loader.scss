@@ -1,0 +1,41 @@
+$cBlack: black;
+
+.three-dot-spinner {
+    text-align: center;
+
+    & div {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-color: $cBlack;
+        border-radius: 50%;
+        animation: sk-bouncedalay 1.4s infinite;
+        // これから作成するキーフレームの名前 アニメーションの間隔 infinite=無限(永遠にループするアニメーション)
+
+        // for文の書き方
+        // through は to で置き換えられるが、最後の値は含まない。1 to 100 なら 100は含まない
+        @for $i from 1 through 2 {
+            &:nth-child(#{$i}) {    //セレクタで変数を使う場合は #{} で囲む。インターポライションと言うらしい。
+                animation-delay: -0.32s / $i;   //変数で割ることでまとめられる。四則演算は単位を含めて行える
+            }
+        }
+    }
+}
+
+@keyframes sk-bouncedalay {
+    0% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
