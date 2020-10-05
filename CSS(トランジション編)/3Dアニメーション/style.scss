@@ -1,0 +1,61 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+
+.btn {
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.cover-3d {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d; //子要素に対して3D化出来る
+    perspective: 300px; //奥行き
+    // 3Dアニメーションには上記2つの記述が必要
+
+    & span {
+      display: inline-block;
+      // translateZはインライン要素に適用できない為、変更
+      transform: translateZ(20px);
+      // Z軸の位置付けを明示的にする為
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: $cBlack;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateX(90deg); // X軸を中心に回る
+      // 手前から降りてきて欲しいので-90degから90degへ変更
+      transition: all 3s;
+      // デベロッパーツールのGUI上にてアニメーションの緩急を調整可能。
+      transform-origin: top center;
+      // アニメーションの開始地点を指定する記述
+      //z-index: -1;
+      opacity: 0;
+      // 透明にする記述
+    }
+
+    &:hover {
+      color: $cWhite;
+
+      &::before { //spanタグの代わりに擬似要素 ::beforeを設定する
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}

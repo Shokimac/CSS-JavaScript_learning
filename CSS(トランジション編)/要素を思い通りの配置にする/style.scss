@@ -1,0 +1,79 @@
+.parent {
+  background-color: rgb(81, 218, 218);
+  height: 600px;
+  width: 100%;
+}
+
+.child {
+  background-color: orange;
+  // width: 100px;
+  // height: 100px;
+  font-weight: 600;
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+.child.v1 {
+  flex-shrink: 0;
+  // 縮む意味を持つshrinkで0とする事で、縮まないようにさせる記述
+}
+
+.child.v2 {
+  background-color: palevioletred;
+  flex-grow: 2;
+  // width: 200px;
+  // height: 200px;
+}
+
+.child.v3 {
+  background-color: rebeccapurple;
+  flex-grow: 3;
+}
+
+/**
+ * 横方向のレイアウト
+ */
+/* インライン要素に対して */
+// .parent {
+//   text-align: right;
+//   letter-spacing: -6px;
+// }
+// .child {
+//     display: inline-block;
+// }
+
+/* ブロック要素を中央揃え */
+// .parent {}
+
+// .child {
+//   width: 100px;
+//   margin: 0 auto;
+// }
+
+/**
+ * 上下方向のレイアウト
+ */
+// .parent {
+//   position: relative;
+// }
+// .child {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+// position: absolute; を使う場合は要素を重ねて表示させたい時に使う
+
+.parent {
+  display: flex;
+  flex-direction: row;
+  //並ぶ方向を決める。縦がcolumn , 横は row
+  flex-direction: row-reverse;
+  // 横並び順が逆になる
+  justify-content: center;
+  // 中央揃え
+  // align-items: flex-end;
+  // 左右の位置を決めるプロパティ
+  // flex-wrap: wrap;
+  // 横に300pxを各要素が確保できない場合は改行される
+}

@@ -1,0 +1,42 @@
+#container {
+  padding: 1rem;
+  background-color: gray;
+  position: relative;
+}
+
+div {
+  font-weight: 600;
+  padding: 0.5rem;
+  font-size: 1.1em;
+  width: 150px;
+  height: 150px;
+  box-shadow: 7px 7px 0 0 #000;
+}
+
+.div-1 {
+  background: orange;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.div-2 {
+  background: tomato;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+.div-3 {
+  background: teal;
+  position: absolute;
+  top: 45px;
+  left: 45px;
+  height: 800px;
+}
+.div-4 {
+  width: 80px;
+  height: 80px;
+  background-color: violet;
+  z-index: 100;
+  position: sticky;
+  top: 30px;
+}
