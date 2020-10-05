@@ -1,0 +1,48 @@
+a {
+    color: orange;
+
+    &:visited {
+        color: blue;
+    }
+
+    &:hover {
+        color: red;
+    }
+
+    &:focus {
+        color: green;
+    }
+
+    &:active {
+        color: purple;
+    }
+}
+
+div {
+    & span {
+        color: olive;
+        
+        &:not(.cls) {
+            color: purple;
+        }
+        // 引数に一致しない要素に対してスタイルを適用させる
+    }
+
+
+    // & span:first-of-type {
+    //     color: purple;
+    // }
+    //nth-childで指定する引数は 2n で偶数 2n + 1で奇数
+    //ただし、他の方法で even で偶数、 odd で奇数を指定できる
+
+    // & span:nth-of-type(2) {
+    //     color: green;
+    // }
+
+    // & span:nth-of-type(3) {
+    //     color: blue;
+    // }
+    //nth-child で指定すると親要素の中の子要素1番目..2番目..とスタイルを適用していく
+    //nth-of-type で指定した場合、上記だと親要素の中で、1番目のspan..2番目のspan..と
+    //適用される範囲が変わってくるので使い分けが必要
+}
