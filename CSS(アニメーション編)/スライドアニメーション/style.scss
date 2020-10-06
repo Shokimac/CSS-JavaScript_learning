@@ -1,0 +1,83 @@
+@import 'mixin';
+
+img {
+    max-width: 100%; //親要素の横幅いっぱいで指定される
+    vertical-align: bottom; //画像の上下に余白がある場合に、解消される
+}
+
+.cover-slide {
+    position: relative;
+    overflow: hidden; //画像をパンさせた時に、親要素の枠からはみ出てしまう為領域外を表示させない
+    
+    &::after {
+        content: '';    //擬似要素を使う場合は必ず空文字を作ることを忘れない
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // width:100%や height:100% 以外にも上記の方法で要素の大きさを指定することができる
+        background-color: #eaebe6;
+    }
+
+    &.inview {
+        &::after{
+            @include animation(
+                $name: kf-cover-slide,
+                $duration: 1.6s,
+                $timing-function: ease-in-out
+            );
+        }
+    }
+}
+
+@keyframes kf-cover-slide {
+    0% {
+        left: 0;
+        right: 100%;
+        // 上記の記述で左側に押し潰されているようになっている
+    }
+
+    50% {
+        left: 0;
+        right: 0;
+    }
+
+    100% {
+        left: 100%;
+        right: 0;
+    }
+}
+
+.img-zoom {
+    opacity: 0;
+    
+    .inview & {
+        opacity: 1;
+        @include animation(
+            $name: kf-img-show,
+            $duration: 1.6s,
+            $timing-function: ease-in-out,
+            $fill-mode: none);
+    }
+}
+
+@keyframes kf-img-show {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    50.1% {
+        opacity: 1;
+        transform: scale(1.5); //画像をパンさせる
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
