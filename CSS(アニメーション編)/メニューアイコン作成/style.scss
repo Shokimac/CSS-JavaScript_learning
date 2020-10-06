@@ -1,0 +1,46 @@
+$cBlack: black;
+$cWhite: white;
+
+.mobile-menu-icon {
+    background-color: transparent;
+    border: none;
+    outline: none !important;
+    // ブラウザのデフォルト機能でつくフォーカス時の枠線を outline: none で消し
+    // !important で優先順位を上げることでブラウザのデフォルトよりも優先して動く
+    cursor: pointer;
+    // :hover を付けなくて、この記述でマウスカーソルがポインターになる
+
+    & > span {
+        background-color: $cBlack;
+        width: 35px;
+        height: 2px;
+        display: block;
+        margin-bottom: 9px;
+        transition: transform 0.7s;
+        // 始めにアニメーションの最終形態を整えた後で transitionを加えることでアニメーションが簡単に作成できる
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.menu-open {
+    background-color: $cBlack;
+
+    .mobile-menu-icon {
+        & > span {
+            background: $cWhite;
+
+            &:nth-child(1){
+                transform: translateY(11px) rotate(135deg);
+            }
+            &:nth-child(2){
+                transform: translateX(-18px) scaleX(0);
+            }
+            &:nth-child(3){
+                transform: translateY(-11px) rotate(-135deg);
+            }
+        }
+    }
+}

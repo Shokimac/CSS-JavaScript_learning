@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="images/400x250.png">
+    <div class="bg-img"></div> -->
+
+    <picture>
+        <source media="(min-width:960px)" srcset="images/1100x550.png">
+        <source media="(min-width:480px)" srcset="images/800x250.png">
+        <img src="images/400x250.png" alt="test">
+    </picture>
+    <!-- pictureタグを使うと、画面の横幅によって表示させる画像を変えられる。レスポンシブ対応に使える -->
+
+    <style>
+        /* img {
+            height: 500px;
+            width: 300px;
+            object-fit: cover; */
+            /* object-fit を使うと、background-imageに対して適用できたcoverと同等の効果をimgタグに用いることができる。 */
+        /* } */
+        .bg-img{
+            height: 500px;
+            background-image: url(images/400x250.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</body>
+</html>

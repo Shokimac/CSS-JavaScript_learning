@@ -1,0 +1,40 @@
+$cBlack: black;
+
+body {
+  text-align: center;
+}
+
+.rect {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: $cBlack;
+  animation: sk-bouncedelay 1.4s;
+  animation-timing-function: ease;
+  // animation-delay: 3s;
+  // animation-iteration-count: infinite;
+  // アニメーションを行う回数
+  // animation-direction: alternate;
+  // alternateとする事で開始と終了を往復する動作になる。reverseは100%→0%へ動作する。
+  // animation-fill-mode: forwards;
+  // アニメーション終了時の状態を保持する。
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes sk-bouncedelay {
+  from {
+    transform: scale(0);
+    background-color: black;
+  }
+
+  to {
+    transform: scale(1);
+    background-color: green;
+  }
+}
+
+// キーフレームは、0% 100% で書くことも from to で書くこともできる
+
