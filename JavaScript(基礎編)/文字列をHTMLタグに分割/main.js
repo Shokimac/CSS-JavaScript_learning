@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // curr の中に処理前の文字が代入され、accuに処理後の文字が蓄積される
         curr = curr.replace(' ', '&nbsp;');
         console.log(accu);
-        return `<span class="char">${curr}</span>`;
+        return `${accu}<span class="char">${curr}</span>`;
         // 先頭に${accu}を付ける必要は、前回ループ時の文字列が格納されているaccuに蓄積させていくため
         // 先頭に${accu}を付けないと、accuの中身が上書きされていってしまう。
     }, "");
