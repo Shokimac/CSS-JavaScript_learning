@@ -4,7 +4,7 @@
 // }
 // これをアロー関数にして記述すると
 
-// const hello = (name = 'Tom') => console.log('hello' + name);
+const hello = (name = 'Tom') => console.log('hello' + name);
 // 無名関数の場合にいちいち functionを書かなくて済む
 // また、中身が1行であれば {} も削除できる
 // アロー関数は記述を簡略化できる。
